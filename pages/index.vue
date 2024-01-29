@@ -1,8 +1,8 @@
 <template>
   <ul>
     <li v-for="mountain in mountains">
-      <NuxtLink :to="`/mountains/${mountain.slug}`">
-        {{ mountain.slug }}
+      <NuxtLink :to="`/mountains/${mountain.topics_id}`">
+        {{ mountain.topics_id }}
       </NuxtLink>
     </li>
   </ul>

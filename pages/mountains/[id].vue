@@ -10,8 +10,9 @@
 <script setup lang="ts">
 const { params } = useRoute();
 const mountains = inject("mountains") as any;
+console.log(mountains);
 
 const mountain = mountains?.find((mountain: any) => {
-  return mountain.slug === params.id;
+  return mountain.topics_id == params.id;
 });
 </script>

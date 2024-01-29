@@ -3,11 +3,11 @@
 </template>
 
 <script setup lang="ts">
-const { data: mountains } = await useFetch<any>(
-  "https://api.nuxtjs.dev/mountains",
-  {
-    // このkeyがpayload.jsのオブジェクト内のdataのkeyと同じ
-    key: "mountains",
+const { data: mountains } = await useAsyncData<any>(
+  "mountains",
+  async () => { 
+    const resp = await $fetch('https://temp03-colrevo.g.kuroco.app/rcms-api/1/news/list?cnt=100');
+    return resp.list;
   }
 );
 
